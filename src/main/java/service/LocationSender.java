@@ -33,7 +33,7 @@ public class LocationSender {
 
     public void StartSending() throws InterruptedException, URISyntaxException {
 
-        mWs = new WebSocketClient(new URI("ws://localhost:8080/VerplaatsingSysteem/test/notifications"), new Draft_17()) {
+        mWs = new WebSocketClient(new URI("ws://localhost:8181/VerplaatsingSysteem/test/notifications"), new Draft_17()) {
             @Override
             public void onMessage(String message) {
                 System.out.println(message);
