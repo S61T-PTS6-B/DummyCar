@@ -5,6 +5,7 @@
  */
 package service;
 
+import com.sun.jndi.toolkit.url.Uri;
 import java.net.URI;
 import java.net.URISyntaxException;
 import model.CarLocation;
@@ -22,6 +23,7 @@ import org.json.simple.JSONArray;
 public class LocationSender {
 
     WebSocketClient mWs;
+    String url;
 
     public LocationSender() {
 
@@ -33,7 +35,7 @@ public class LocationSender {
 
     public void StartSending() throws InterruptedException, URISyntaxException {
 
-        mWs = new WebSocketClient(new URI("ws://localhost:8181/VerplaatsingSysteem/test/notifications"), new Draft_17()) {
+        mWs = new WebSocketClient(new URI("ws://" + url + "test/notifications"), new Draft_17()) {
             @Override
             public void onMessage(String message) {
                 System.out.println(message);
@@ -76,5 +78,11 @@ public class LocationSender {
             mWs.send(message);
         }
     }
+    
+    public void setUrl(String url){
+        this.url = url;
+    }
+    
+    
 
 }

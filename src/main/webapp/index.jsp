@@ -14,6 +14,7 @@
     <body>
         <h1>Hello World!</h1>
         <form action="ControllerServlet" method="POST">
+            Url: <input type="text" name="input">
             <input type="submit" value="Start sending">
         </form>
     </body>

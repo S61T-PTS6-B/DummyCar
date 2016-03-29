@@ -80,12 +80,14 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String url = request.getParameter("input");
         try {
             if (sending) {
                 sending = false;
                 ls.CloseConnection();
             } else {
                 sending = true;
+                ls.setUrl(url);
                 ls.StartSending();
             }
         } catch (InterruptedException ex) {
