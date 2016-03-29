@@ -1,0 +1,5 @@
+com\mycompany\dummycarmaven\Connection\Controller\ControllerServlet.class
+model\CarLocation.class
+service\LocationSender$1.class
+service\LocationSender.class
+Connection\SocketConnection.class
